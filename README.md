@@ -8,7 +8,7 @@ typora-root-url: img
 
 智能绿化小程序
 
-![gh_48d6ec319f61_258](/gh_48d6ec319f61_258.jpg)
+![gh_48d6ec319f61_258](/img/gh_48d6ec319f61_258.jpg)
 
 
 
