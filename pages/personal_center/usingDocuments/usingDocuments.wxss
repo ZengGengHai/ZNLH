@@ -1,0 +1,4 @@
+/* pages/personal_center/usingDocuments/usingDocuments.wxss */
+page{
+  background: #fff;
+}

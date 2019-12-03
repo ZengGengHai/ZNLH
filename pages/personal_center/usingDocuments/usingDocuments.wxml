@@ -1,0 +1,30 @@
+<!--pages/personal_center/usingDocuments/usingDocuments.wxml-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">操作步骤</view>
+</cu-custom>
+<view class="cu-timeline" style='margin-top:60rpx;'>
+  <view class="cu-time" style="font-weight:blod;padding:5rpx;">使用手册</view>
+  <view class="cu-item cur ">
+    <view class="content bg-green shadow-blur">
+       进入搜索设备页面，输入设备id后点击搜索
+    </view>
+  </view>
+  <view class="cu-item text-red ">
+    <view class="content bg-red shadow-blur">
+      搜索设备后点击设备，输入该设备的密钥，点击验证
+    </view>
+  </view>
+  <view class="cu-item text-grey ">
+    <view class="content bg-grey shadow-blur">
+      验证通过后进入设备详情页面，可以添加设备或者操纵设备
+    </view>
+  </view>
+  <view class="cu-item text-blue">
+    <view class="bg-blue content">
+      用户如果添加设备后，再次进入小程序首页可以点击我的设备页面，管理或操纵设备
+    </view>
+
+   
+  </view>
+</view>

@@ -1,0 +1,67 @@
+/* pages/search_equipment/equipment_details/equipment_details.wxss */
+ff-canvas {
+  width: 50%;
+  height: 50%;
+}
+.container1 {
+  /* position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; */
+
+  width:50vw;
+  height:48vw;
+  background:#fff;
+  padding:2rpx;
+  margin:15rpx 0 0;
+} 
+
+.container2{
+  position:relative;
+  width:50vw;
+  height:48vw;
+  background:#fff;
+  padding:2rpx;
+  margin:15rpx auto;
+}
+
+.gauge{
+  display: flex;
+  flex-direction: row;
+  margin:15rpx auto;
+
+
+}
+
+#gauge-dom {
+  width:46vw;
+  height:40vh;
+}
+
+
+.indexes {
+  position: relative;
+}
+
+.map{
+  width: 100vw; 
+  height:22vh;
+  margin:15rpx auto;
+}
+.time{
+  text-align: center;
+}
+.dengpao{
+  display: flex;
+  flex-direction: row;
+  margin:15rpx auto;
+  width:100vw;
+  justify-content: space-around;
+ 
+}

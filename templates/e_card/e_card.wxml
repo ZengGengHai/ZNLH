@@ -1,0 +1,15 @@
+<template name='e_card'>
+   <block  wx:for-items="{{equipmentList}}" wx:key="{{item.content_id}}">
+    <view class='e-box  radius shadow-warp bg-white margin-top' bindtap="showModal" data-id="{{item.id}}" data-target="Image">
+      <view class='e-name'>{{item.title}}</view>  
+      <view class='id-protocol'>
+        <view class='e-id'>设备ID:{{item.id}}</view>  
+        <view class='e-protocol'>设备接入协议:{{item.protocol}}</view> 
+      </view>
+      <view class='time-online'>
+        <view class='e-time'>{{item.create_time}}</view>
+        <view class="{{item.online?'e-online-true':'e-online-false'}}" >{{item.online?'在线':'离线'}}</view>
+      </view>
+    </view>
+   </block>
+</template>

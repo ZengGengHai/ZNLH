@@ -1,0 +1,22 @@
+<!--pages/my_equipment/myequipment/myequipment.wxml-->
+
+<cu-custom bgImage="https://cloud-minapp-21236.cloud.ifanrusercontent.com/1htT9b4yfyTV2W99.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">设备列表</view>
+</cu-custom>
+
+
+<template is="e_card" data="{{equipmentList}}"/>
+<import src="../../../templates/e_card/e_card.wxml"/>
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>
+
+<view style='width:100vw;margin-top:30vh;display:flex; justify-content:center;' wx:if="{{showbox}}">
+  <image src='../../../images/kong.png' style='width:200rpx;height:200rpx;margin:0 auto;'></image>
+  
+</view>

@@ -1,0 +1,118 @@
+<!--pages/search_equipment/equipment_details/equipment_details.wxml-->
+
+  <cu-custom bgImage="https://cloud-minapp-21236.cloud.ifanrusercontent.com/1htT9b4yfyTV2W99.jpg"  isBack="{{true}}" >
+    <view slot="backText">返回</view>
+    <view slot="content">设备详情</view>
+  </cu-custom>
+
+
+<!-- <block wx:for="{{List}}">
+    <view class='e-box  radius shadow-warp bg-white margin-top' style="margin-top:20rpx;padding:20rpx;font-size:26rpx;line-height:40rpx;" bindtap="showModal" data-id="{{item.id}}" data-target="Image">
+      <view class='e-name'>{{item.id}}</view>  
+      <view class='id-protocol'> 最新数据:{{item.current_value}}
+      </view>
+      <view class='time-online'>更新时间：{{item.update_at}}</view>
+    </view>
+</block> -->
+
+
+<view  wx:if="{{timeshow}}"  wx:key="{{index}}" class='e-box  radius shadow-warp bg-white margin-top' style="margin:30rpx auto 0;padding:30rpx;font-size:26rpx;line-height:40rpx;width:100vw;" bindtap="showModal" data-id="{{item.id}}" data-target="Image">
+    <view class='time'>实时时间：{{newtime.update_at}}</view>
+</view>
+
+<view >
+
+  <view  class="gauge"  wx:key="{{index}}" wx:if="{{temperatureshow}}">
+    <view class="container1 shadow-warp bg-white "  >
+      <ff-canvas id="gauge-dom" ></ff-canvas>
+    </view>
+    <view class="container2 shadow-warp bg-white">
+      <ff-canvas id="gauge2-dom"  ></ff-canvas>
+    </view>
+  </view>
+
+ <view   wx:key="{{index}}" wx:if="{{bluelightshow}}" class='shadow-warp bg-white dengpao' >      <!-- 蓝灯水泵  -->
+    <view style='width:50vw;display:flex;flex-direction:row; justify-content: center;'>
+    
+     <image src="{{showLight?'../../../images/icon/shuibengon.png':'../../../images/icon/shuibengoff.png'}}" style='width:100rpx;height:100rpx;padding:15rpx 10rpx;'></image>
+    
+    </view>
+
+    <view style='width:50vw;display:flex;flex-direction:column; justify-content: center;'>
+    
+    <button wx:if="{{!showLight}}"  bindtap="openBLight" class="bg-gradual-green cu-btn {{toggleDelay?'animation-slide-bottom':''}} margin-sm basis-sm shadow" style="animation-delay: 0.1}}s;width:35vw;height:50rpx;margin:0 auto;line-height:50rpx;text-align:center;" >{{!showLight?'打开水泵':'关闭水泵'}}</button>
+       
+    <button wx:if="{{showLight}}"  bindtap="closeBLight" class="bg-gradual-red cu-btn {{toggleDelay?'animation-slide-bottom':''}} margin-sm basis-sm shadow" style="animation-delay: 0.1}}s;width:35vw;height:50rpx;margin:0 auto;line-height:50rpx;text-align:center;">关闭水泵</button>
+    
+    </view>
+ </view>
+
+  <view   wx:key="{{index}}" wx:if="{{yellowlightshow}}" class='shadow-warp bg-white dengpao' >      <!-- 黄灯水阀  -->
+    <view style='width:50vw;display:flex;flex-direction:row; justify-content: center;'>
+    
+     <image src="{{showLight?'../../../images/icon/gangshuifaon.png':'../../../images/icon/gangshuifaoff.png'}}" style='width:100rpx;height:100rpx;padding:15rpx 10rpx;'></image>
+    
+    </view>
+
+    <view style='width:50vw;display:flex;flex-direction:column; justify-content: center;'>
+    
+    <button wx:if="{{!showLight}}"  bindtap="openYLight" class="bg-gradual-green cu-btn {{toggleDelay?'animation-slide-bottom':''}} margin-sm basis-sm shadow" style="animation-delay: 0.1}}s;width:35vw;height:50rpx;margin:0 auto;line-height:50rpx;text-align:center;" >{{!showLight?'打开水阀':'关闭水阀'}}</button>
+       
+    <button wx:if="{{showLight}}"  bindtap="closeYLight" class="bg-gradual-red cu-btn {{toggleDelay?'animation-slide-bottom':''}} margin-sm basis-sm shadow" style="animation-delay: 0.1}}s;width:35vw;height:50rpx;margin:0 auto;line-height:50rpx;text-align:center;">关闭水阀</button>
+    
+    </view>
+ </view>
+
+
+  <view wx:if="{{mapshow}}"  wx:key="{{index}}"  class='mg-top' style='margin-top:30rpx;'>
+      <map
+        subkey="{{subKey}}"
+        class='map shadow-warp bg-white'
+        latitude="{{location.current_value.lat}}"
+        longitude="{{location.current_value.lon}}"
+        scale="{{13}}"
+        markers="{{markers}}"
+        covers="{{covers}}"
+        include-points="true"
+        layer-style="2"
+        enable-3D="{{enable3d}}"
+        show-compass="{{true}}"
+        enable-zoom="true"
+
+        enable-rotate="{{enableRotate}}"
+        enable-overlooking="{{enableOverlooking}}"
+        enable-scroll="true"
+        polygons="{{drawPolygon ? polygons : []}}"
+      >
+      </map>
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+<view class="padding flex flex-direction" style='margin-top:20rpx;'>
+<button wx:if="{{!collectionBox}}" class="cu-btn bg-gradual-red lg" bindtap='deleteEquipment'>移除设备</button>
+  <button wx:if="{{collectionBox}}" class="cu-btn bg-gradual-blue lg" bindtap='collectEquipment'>添加设备</button>
+  <!-- <button class="cu-btn bg-gradual-pink margin-tb-sm lg">操作设备
+  </button> -->
+</view>
+
+
+
+
+
+
+
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

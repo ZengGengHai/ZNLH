@@ -1,0 +1,80 @@
+<!--pages/search_equipment/search.wxml-->
+<cu-custom bgImage="https://cloud-minapp-21236.cloud.ifanrusercontent.com/1htT9bGC8PNjYze8.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">索引</view>
+</cu-custom>
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search" bindconfirm="searchEquipment" bindinput="bindReplaceInput"   focus="true" ></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-green shadow-blur round" bindtap='searchEquipment'>搜索</button>
+  </view>
+</view>
+
+
+<import src="../../../templates/e_card/e_card.wxml"/>
+<template is="e_card" data="{{equipmentList}}"/>
+
+
+<!-- 
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 图片窗口
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="Image">Image</button>
+  </view>
+</view> -->
+
+
+<view class="cu-modal {{modalName=='Image'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="bg-img" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg');height:200px;">
+      <view class="cu-bar justify-end text-white">
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close "></text>
+        </view>
+      </view>
+      <input class='pwd bg-white' placeholder='输入此设备密码' bindinput="equipmentPwd" type="text" confirm-type="done"  maxlength="20" >{{pwd}}</input>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="verfication">点击验证</view>
+    </view>
+  </view>
+</view>
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>
+
+<!-- <scroll-view scroll-y class="indexes" scroll-into-view="indexes-{{listCurID}}" style="height:calc(100vh - {{CustomBar}}px - 50px)" scroll-with-animation="true" enable-back-to-top="true">
+  <block wx:for="{{list}}" wx:key>
+    <view class="padding indexItem-{{list[index]}}" id="indexes-{{list[index]}}" data-index="{{list[index]}}">{{list[index]}}</view>
+    <view class="cu-list menu-avatar no-padding">
+      <view class="cu-item" wx:for="{{2}}" wx:key wx:for-index="sub">
+        <view class="cu-avatar round lg">{{list[index]}}</view>
+        <view class="content">
+          <view class="text-grey">{{list[index]}}
+            <text class="text-abc">{{list[sub]}}</text>君</view>
+          <view class="text-gray text-sm">
+            有{{sub+2}}个主子需要伺候
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+<view class="indexBar" style="height:calc(100vh - {{CustomBar}}px - 50px)">
+  <view class="indexBar-box" bindtouchstart="tStart" bindtouchend="tEnd" catchtouchmove="tMove">
+    <view class="indexBar-item" wx:for="{{list}}" wx:key id="{{index}}" bindtouchstart="getCur" bindtouchend="setCur">{{list[index]}}</view>
+  </view>
+</view>
+
+<view hidden="{{hidden}}" class="indexToast">
+  {{listCur}}
+</view> -->
+

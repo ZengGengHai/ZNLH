@@ -1,0 +1,41 @@
+/* pages/search_equipment/equipment_ant/equipment_ant.wxss */
+ff-canvas {
+  width: 100%;
+  height: 50%;
+}
+.container1 {
+  /* position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; */
+
+  width:96vw;
+  height:30vh;
+  background:#fff;
+  padding:20rpx;
+  margin:30rpx 2vw;
+} 
+
+.container2{
+  position:relative;
+ 
+
+ 
+  
+ width:96vw;
+  height:30vh;
+  background:#fff;
+  padding:20rpx;
+  margin:30rpx 2vw;
+}
+
+#gauge-dom {
+  width:100vw;
+  height:40vh;
+}

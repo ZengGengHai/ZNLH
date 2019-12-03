@@ -1,0 +1,2 @@
+/* pages/my_equipment/myequipment/myequipment.wxss */
+@import "../../../templates/e_card/e_card.wxss";

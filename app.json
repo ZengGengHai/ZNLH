@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/search_equipment/equipment_ant/equipment_ant",
+    "pages/search_equipment/equipment_details/equipment_details",
+    "pages/personal_center/person/person",
+    "pages/personal_center/usingDocuments/usingDocuments",
+    "pages/my_equipment/myequipment/myequipment",
+    "pages/search_equipment/search/search",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "Color UI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "plugins": {
+    "sdkPlugin": {
+      "version": "2.0.8",
+      "provider": "wxc6b86e382a1e3294"
+    }
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

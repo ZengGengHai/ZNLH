@@ -1,0 +1,34 @@
+.e-box{
+  width:100vw;
+  flex-direction: row;
+  padding:35rpx;
+
+}
+.e-name{
+  font-size: 30rpx;
+  color:black;
+  
+}
+.id-protocol,.time-online{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.e-id,.e-protocol{
+ 
+  font-size: 25rpx;
+  color:black;
+  padding:25rpx 0;
+
+}
+.e-time{
+  font-size: 25rpx;
+}
+.e-online-true{
+  color:green;
+  font-size: 25rpx;
+}
+.e-online-false{
+  color: #921616;
+  font-size: 25rpx;
+}
